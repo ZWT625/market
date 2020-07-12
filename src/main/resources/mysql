@@ -1,0 +1,32 @@
+create database market;
+create table Tb_Item(
+id int not null auto_increment primary key,#商品ID
+cid int not null ,#分类id
+tid int,#类型id
+brandId int,#品牌id
+title char(50) not null,#商品名称
+img   varchar(255) not null,#商品图片
+originalPrice char(20) not null,#原始价格
+realPrice char(20) not null,#真实价格
+label varchar(255) not null#标签
+);
+insert into Tb_Item(cid,tid,brandId,title,img,originalPrice,realPrice,label) values(3,1,1,"茅台酒","图片省略。。","500","400","本产品属于赠品，概不出售");
+insert into Tb_Item(cid,tid,brandId,title,img,originalPrice,realPrice,label) values(1,2,2,"方向盘套","图片省略。。","200","100","适用于所有车型");
+
+
+create table Tb_Category(
+id int not null auto_increment primary key,#分类id
+cname varchar(50) not null#分类名称
+);
+insert into Tb_Category(cname) values("汽车内饰品");
+insert into Tb_Category(cname) values("汽车影音");
+insert into Tb_category(canme) values("烟酒副食");
+insert into Tb_category(canme) values("汽车配件");
+
+create table Tb_Type(
+id int not null auto_increment primary key,#类型id
+type char(20) not null #类型名称
+);
+insert into Tb_type(type) values("积分产品");
+insert into Tb_type(type) values("汽车周边");
+insert into Tb_type(type) values("机油产品");
